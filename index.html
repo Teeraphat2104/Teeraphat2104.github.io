@@ -1,1 +1,171 @@
-<h1>Hello world</h1>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Teeraphat Lansantahd</title>
+    <style>
+        /* Reset พื้นฐาน */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #2980b9;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .contact-info p {
+            margin-bottom: 5px;
+        }
+
+        .skills, .experience, .education {
+            margin-left: 20px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .skill-item {
+            display: inline-block;
+            background-color: #3498db;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin: 5px 5px 0 0;
+            font-size: 14px;
+        }
+
+        .job, .edu {
+            margin-bottom: 15px;
+        }
+
+        .job p, .edu p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .resume-container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Header -->
+        <header>
+            <h1>Teeraphat Lansantahd</h1>
+            <div class="contact-info">
+                <p>Email: teeraphat@example.com</p>
+                <p>Phone: +66 123 456 789</p>
+                <p>GitHub: <a href="https://github.com/Teeraphat2104" target="_blank">Teeraphat2104</a></p>
+                <p>Website: <a href="https://teeraphat2104.github.io" target="_blank">teeraphat2104.github.io</a></p>
+            </div>
+        </header>
+
+        <!-- Summary -->
+        <section class="section summary">
+            <h2>Summary</h2>
+            <p>นักพัฒนาเว็บที่มีประสบการณ์การทำงานกับ Laravel, React และ HTML/CSS สามารถออกแบบเว็บไซต์ที่ตอบสนองต่อผู้ใช้งานและมีประสิทธิภาพสูง</p>
+        </section>
+
+        <!-- Skills -->
+        <section class="section skills">
+            <h2>Skills</h2>
+            <div>
+                <span class="skill-item">HTML</span>
+                <span class="skill-item">CSS</span>
+                <span class="skill-item">JavaScript</span>
+                <span class="skill-item">Laravel</span>
+                <span class="skill-item">React</span>
+                <span class="skill-item">MySQL</span>
+                <span class="skill-item">Git</span>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="section experience">
+            <h2>Experience</h2>
+            <div class="job">
+                <h3>Frontend Developer - ABC Company</h3>
+                <p>Jan 2023 - Present</p>
+                <ul>
+                    <li>พัฒนาเว็บไซต์โดยใช้ React และ Tailwind CSS</li>
+                    <li>ปรับปรุง UI/UX ให้ตอบสนองต่อผู้ใช้งาน</li>
+                    <li>เชื่อมต่อ API กับ backend Laravel</li>
+                </ul>
+            </div>
+            <div class="job">
+                <h3>Web Developer Intern - XYZ Co.</h3>
+                <p>Jun 2022 - Dec 2022</p>
+                <ul>
+                    <li>สร้างเว็บแอปพลิเคชันด้วย PHP และ Laravel</li>
+                    <li>ปรับปรุงเว็บไซต์ให้รองรับมือถือ</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="section education">
+            <h2>Education</h2>
+            <div class="edu">
+                <h3>Bachelor of Science in Computer Science</h3>
+                <p>Rajabhat University, 2019 - 2023</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
