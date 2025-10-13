@@ -1,171 +1,153 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume - Teeraphat Lansantahd</title>
-    <style>
-        /* Reset พื้นฐาน */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume - Teeraphat Lansantahd</title>
 
-        body {
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-            padding: 20px;
-        }
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        .resume-container {
-            max-width: 900px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffe6f0, #fff0f5);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        h1 {
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
+    .resume-container {
+      max-width: 900px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(255, 182, 193, 0.3);
+      margin: 40px auto;
+      padding: 40px;
+      border-top: 6px solid #ff69b4;
+    }
 
-        h2 {
-            font-size: 22px;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #3498db;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
+    .header-title {
+      background: linear-gradient(90deg, #ff99cc, #ff66b2);
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 24px;
+      letter-spacing: 1px;
+      margin-bottom: 30px;
+      box-shadow: 0 3px 8px rgba(255, 105, 180, 0.3);
+    }
 
-        h3 {
-            font-size: 18px;
-            margin-bottom: 5px;
-            color: #2980b9;
-        }
+    .section-title {
+      border-left: 4px solid #ff66b2;
+      padding-left: 10px;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: #ff3399;
+    }
 
-        .section {
-            margin-bottom: 25px;
-        }
+    .skill-badge {
+      margin: 5px;
+      font-size: 0.9rem;
+      background-color: #ff66b2 !important;
+    }
 
-        .contact-info p {
-            margin-bottom: 5px;
-        }
+    a {
+      text-decoration: none;
+      color: #ff3399;
+    }
 
-        .skills, .experience, .education {
-            margin-left: 20px;
-        }
+    a:hover {
+      text-decoration: underline;
+      color: #ff007f;
+    }
 
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
+    .card {
+      border-radius: 10px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
 
-        .skill-item {
-            display: inline-block;
-            background-color: #3498db;
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 5px;
-            margin: 5px 5px 0 0;
-            font-size: 14px;
-        }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(255, 105, 180, 0.25);
+    }
 
-        .job, .edu {
-            margin-bottom: 15px;
-        }
-
-        .job p, .edu p {
-            font-size: 14px;
-            color: #555;
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            .resume-container {
-                padding: 20px;
-            }
-            h1 {
-                font-size: 28px;
-            }
-            h2 {
-                font-size: 20px;
-            }
-        }
-    </style>
+    @media (max-width: 576px) {
+      .resume-container {
+        padding: 25px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="resume-container">
-        <!-- Header -->
-        <header>
-            <h1>Teeraphat Lansantahd</h1>
-            <div class="contact-info">
-                <p>Email: teeraphat@example.com</p>
-                <p>Phone: +66 123 456 789</p>
-                <p>GitHub: <a href="https://github.com/Teeraphat2104" target="_blank">Teeraphat2104</a></p>
-                <p>Website: <a href="https://teeraphat2104.github.io" target="_blank">teeraphat2104.github.io</a></p>
-            </div>
-        </header>
 
-        <!-- Summary -->
-        <section class="section summary">
-            <h2>Summary</h2>
-            <p>นักพัฒนาเว็บที่มีประสบการณ์การทำงานกับ Laravel, React และ HTML/CSS สามารถออกแบบเว็บไซต์ที่ตอบสนองต่อผู้ใช้งานและมีประสิทธิภาพสูง</p>
-        </section>
-
-        <!-- Skills -->
-        <section class="section skills">
-            <h2>Skills</h2>
-            <div>
-                <span class="skill-item">HTML</span>
-                <span class="skill-item">CSS</span>
-                <span class="skill-item">JavaScript</span>
-                <span class="skill-item">Laravel</span>
-                <span class="skill-item">React</span>
-                <span class="skill-item">MySQL</span>
-                <span class="skill-item">Git</span>
-            </div>
-        </section>
-
-        <!-- Experience -->
-        <section class="section experience">
-            <h2>Experience</h2>
-            <div class="job">
-                <h3>Frontend Developer - ABC Company</h3>
-                <p>Jan 2023 - Present</p>
-                <ul>
-                    <li>พัฒนาเว็บไซต์โดยใช้ React และ Tailwind CSS</li>
-                    <li>ปรับปรุง UI/UX ให้ตอบสนองต่อผู้ใช้งาน</li>
-                    <li>เชื่อมต่อ API กับ backend Laravel</li>
-                </ul>
-            </div>
-            <div class="job">
-                <h3>Web Developer Intern - XYZ Co.</h3>
-                <p>Jun 2022 - Dec 2022</p>
-                <ul>
-                    <li>สร้างเว็บแอปพลิเคชันด้วย PHP และ Laravel</li>
-                    <li>ปรับปรุงเว็บไซต์ให้รองรับมือถือ</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Education -->
-        <section class="section education">
-            <h2>Education</h2>
-            <div class="edu">
-                <h3>Bachelor of Science in Computer Science</h3>
-                <p>Rajabhat University, 2019 - 2023</p>
-            </div>
-        </section>
+  <div class="resume-container">
+    <!-- Header -->
+    <div class="header-title">
+      <i class="bi bi-person-heart me-2"></i>RESUME
     </div>
+
+    <div class="text-center mb-4">
+      <h2 class="fw-bold mb-1 text-pink">Teeraphat Lansantahd</h2>
+      <p class="text-secondary mb-2">You can call me <strong>Tor</strong></p>
+      <div class="d-flex justify-content-center flex-wrap gap-3">
+        <span><i class="bi bi-envelope me-1 text-danger"></i> tlansantad@gmail.com</span>
+        <span><i class="bi bi-github me-1 text-dark"></i> <a href="https://github.com/Teeraphat2104" target="_blank">Teeraphat2104</a></span>
+        <span><i class="bi bi-globe me-1 text-danger"></i> <a href="https://teeraphat2104.github.io" target="_blank">teeraphat2104.github.io</a></span>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <section class="mb-4">
+      <h4 class="section-title"><i class="bi bi-file-earmark-text me-2"></i>Summary</h4>
+      <p>นักพัฒนาเว็บที่มีประสบการณ์การทำงานกับ Laravel และ HTML/CSS สามารถออกแบบเว็บไซต์ที่ตอบสนองต่อผู้ใช้งานได้อย่างดี</p>
+      <p>ปัจจุบันศึกษาอยู่ที่ มหาวิทยาลัยราชภัฏชัยภูมิ คณะศิลปศาสตร์และวิทยาศาสตร์ สาขาวิทยาการคอมพิวเตอร์ ชั้นปีที่ 4 (2568)</p>
+    </section>
+
+    <!-- Skills -->
+    <section class="mb-4">
+      <h4 class="section-title"><i class="bi bi-lightning-charge me-2"></i>Skills</h4>
+      <div>
+        <span class="badge skill-badge">HTML</span>
+        <span class="badge skill-badge">CSS</span>
+        <span class="badge skill-badge">JavaScript</span>
+        <span class="badge skill-badge">Laravel</span>
+        <span class="badge skill-badge">MySQL</span>
+        <span class="badge skill-badge">Git</span>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <h4 class="section-title"><i class="bi bi-mortarboard me-2"></i>Education</h4>
+      <div class="card border-0 shadow-sm mb-2">
+        <div class="card-body">
+          <h5 class="card-title mb-1 text-danger">Bachelor of Science in Computer Science</h5>
+          <p class="card-text text-muted mb-0">Chaiyaphum Rajabhat University (2021 - 2025)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project -->
+    <section>
+      <h4 class="section-title"><i class="bi bi-code-slash me-2"></i>My Project</h4>
+      <div class="card border-0 shadow-sm mb-2">
+        <div class="card-body">
+          <a href="http://202.29.51.239/" target="_blank" class="card-title mb-1 fw-semibold">
+            ระบบรายงานตัวบัณฑิต
+          </a>
+          <p class="card-text text-muted mb-0 mt-1">
+            เว็บแอปพลิเคชันพัฒนาด้วย Laravel สำหรับการจัดการข้อมูลบัณฑิตรายงานตัวก่อนพิธีรับปริญญา
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
