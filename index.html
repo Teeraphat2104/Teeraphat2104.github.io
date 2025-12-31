@@ -1,153 +1,207 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resume - Teeraphat Lansantahd</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year 2026 ✨</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+Thai+Looped:wght@100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Segoe UI', sans-serif;
+            color: #fff;
+        }
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        .sections-container {
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory; /* Snap บังคับตาม scrollbar ชัดเจน */
+            -webkit-overflow-scrolling: touch; /* Smooth บนมือถือ */
+             font-family: "Kanit", sans-serif;
+        }
 
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+            position: relative;
+            scroll-snap-align: center; /* Snap ตรงกลางจอพอดี */
+            overflow: hidden;
+        }
 
-  <style>
-    body {
-      background: linear-gradient(135deg, #ffe6f0, #fff0f5);
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    }
+        /* พื้นหลังพาสเทลไล่สีเบา ๆ แต่ละหน้า */
+        section:nth-child(1) { background: linear-gradient(135deg, #ffeef8, #ffccdd 70%); }
+        section:nth-child(2) { background: linear-gradient(135deg, #e0f7fa, #b0e0e6 70%); }
+        section:nth-child(3) { background: linear-gradient(135deg, #f0e6ff, #d8bfd8 70%); }
+        section:nth-child(4) { background: linear-gradient(135deg, #fff3e0, #ffdab9 70%); }
+        section:nth-child(5) { background: linear-gradient(135deg, #ffccdd, #ffeef8 70%); }
+        section:nth-child(6) { background: linear-gradient(135deg, #b0e0e6, #e0f7fa 70%); }
+        section:nth-child(7) { background: linear-gradient(135deg, #d8bfd8, #f0e6ff 70%); }
 
-    .resume-container {
-      max-width: 900px;
-      background: #fff;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(255, 182, 193, 0.3);
-      margin: 40px auto;
-      padding: 40px;
-      border-top: 6px solid #ff69b4;
-    }
+        /* เอฟเฟกต์ประกายพื้นหลัง */
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(255,182,193,0.25), transparent 60%),
+                        radial-gradient(circle at 80% 70%, rgba(173,216,230,0.25), transparent 60%);
+            animation: sparkle 30s infinite linear;
+            pointer-events: none;
+        }
 
-    .header-title {
-      background: linear-gradient(90deg, #ff99cc, #ff66b2);
-      color: white;
-      padding: 15px;
-      border-radius: 10px;
-      text-align: center;
-      font-size: 24px;
-      letter-spacing: 1px;
-      margin-bottom: 30px;
-      box-shadow: 0 3px 8px rgba(255, 105, 180, 0.3);
-    }
+        @keyframes sparkle {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
 
-    .section-title {
-      border-left: 4px solid #ff66b2;
-      padding-left: 10px;
-      margin-top: 30px;
-      margin-bottom: 20px;
-      font-weight: 600;
-      color: #ff3399;
-    }
+        /* เนื้อหา animation เมื่อเข้าจอ */
+        .content {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 1.2s ease, transform 1.2s ease;
+            max-width: 900px;
+            z-index: 1;
+        }
 
-    .skill-badge {
-      margin: 5px;
-      font-size: 0.9rem;
-      background-color: #ff66b2 !important;
-    }
+        section.active .content {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-    a {
-      text-decoration: none;
-      color: #ff3399;
-    }
+        h1 { font-size: 80px; color: #f38a99; text-shadow: 0 6px 20px rgba(255,182,193,0.6); margin-bottom: 20px; }
+        .year { font-size: 140px; font-weight: bold; color: #83b8f0; text-shadow: 0 8px 30px rgba(167,207,250,0.7); margin: 30px 0; }
+        p { font-size: 32px; line-height: 1.8; text-shadow: 0 2px 10px rgba(0,0,0,0.3); margin: 20px 0; }
 
-    a:hover {
-      text-decoration: underline;
-      color: #ff007f;
-    }
+        .floating {
+            position: absolute;
+            font-size: 60px;
+            opacity: 0.35;
+            animation: float 20s infinite ease-in-out;
+            pointer-events: none;
+        }
 
-    .card {
-      border-radius: 10px;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-40px); }
+        }
 
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 15px rgba(255, 105, 180, 0.25);
-    }
-
-    @media (max-width: 576px) {
-      .resume-container {
-        padding: 25px;
-      }
-    }
-  </style>
+        @media (max-width: 768px) {
+            h1 { font-size: 50px; }
+            .year { font-size: 100px; }
+            p { font-size: 24px; }
+            .floating { font-size: 40px; }
+        }
+    </style>
 </head>
 <body>
 
-  <div class="resume-container">
-    <!-- Header -->
-    <div class="header-title">
-      <i class="bi bi-person-heart me-2"></i>RESUME
+    <div class="sections-container" id="container">
+        <!-- Section 1 -->
+        <section>
+            <div class="floating" style="top:15%;left:8%;color:#ffffe0;animation-delay:0s;">✨</div>
+            <div class="floating" style="top:65%;right:12%;color:#e0ffff;animation-delay:5s;">🎉</div>
+            <div class="content">
+                <h1>Happy New Year</h1>
+            </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section>
+            <div class="floating" style="top:20%;right:10%;color:#ffdab9;">🌟</div>
+            <div class="floating" style="bottom:25%;left:15%;color:#fff0f5;animation-delay:7s;">💫</div>
+            <div class="content">
+                <div class="year">2026</div>
+            </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section>
+            <div class="floating" style="top:10%;left:18%;color:#ffffe0;">🎈</div>
+            <div class="content">
+                <p>สวัสดีปีใหม่ครับ ถึงวันนี้จะวันที่ 31 ก็เถอะ อิอิ</p>
+            </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section>
+            <div class="floating" style="bottom:15%;right:18%;color:#e0ffff;">🥂</div>
+            <div class="content">
+                <p>อย่างแรกก็คงต้องขอให้สุขภาพแข็งแรงตลอดปีหน้าเลย</p>
+                <p>ไม่เจ็บ ไม่ป่วย ร่างกายแข็งแรง💪🏻💪🏻</p>
+            </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section>
+            <div class="floating" style="top:30%;left:12%;color:#ffdab9;">🎁</div>
+            <div class="content">
+                <p>ต่อมาก็ต้องการเรียนสินะะ<br>
+                ขอให้การเรียนราบรื่น ไม่ติดขัด เจอเพื่อนดี ๆ สังคมที่ดีต่อสุขภาพจิตน้าา<br>
+                บางทีเกรดก็ไม่ได้ตามที่หวังแต่ไม่เป็นไรนะ<br>
+                ถ้าทำเต็มที่ก็ไม่มีอะไรให้เสียใจ Fightto! Fightto!<br>
+                และได้เป็น ผอ. ในอนาคตตามที่ปราถนาไว้ 🫶🏻</p>
+            </div>
+        </section>
+
+        <!-- Section 6 -->
+        <section>
+            <div class="floating" style="top:50%;right:8%;color:#fff0f5;">🕛</div>
+            <div class="content">
+                <p>ใกล้สุดท้ายละ เอาเป็นเรื่อง....<br>
+               เวลาละกัน เวลาผ่านไปไวมาก อยากทำอะไรก็ทำเลยย เต็มที่ไปเลย<br>
+                เรื่องที่ทำผิดพลาดไปก็อย่าเก็บมาคิดมากเยอะน้า<br>
+               วันนี้คือวันนี้ พรุ่งนี้คือพรุ่งนี้ อยากได้อนาคตแบบไหนก็ต้องเริ่มตั้งแต่วันนี้แหละ 🙆🏻‍♂️</p>
+            </div>
+        </section>
+
+        <!-- Section 7 -->
+        <section>
+            <div class="floating" style="bottom:12%;left:22%;color:#ffffe0;">💖</div>
+            <div class="content">
+                <p>สุดท้ายนี้ ยินดีที่ได้รู้จักนะครับ ถึงจะรู้จักกันไม่นาน แต่ก็ยินดีที่ได้รู้จักมาก ๆ <br>
+                เรื่องที่อยากบอกก็ ขอบคุณนะครับที่ทักมาหาพี่ 555
+                ใจฟูมากเวลาคุยด้วย รู้เลยว่าเป็นคนเก่งคนนึงเลย<br>
+                แต่เก่งมากนะที่หาไอจีพี่เจอเนี่ย งงมาก555<br>
+               ปีหน้าก็ขอให้มีความสุขมาก ๆ ต่อไปน้า
+               ต้องยิ้มเยอะ ๆ เหมือนกันด้วยนะ อิอิ</p>
+            </div>
+        </section>
     </div>
 
-    <div class="text-center mb-4">
-      <h2 class="fw-bold mb-1 text-pink">Teeraphat Lansantahd</h2>
-      <p class="text-secondary mb-2">You can call me <strong>Tor</strong></p>
-      <div class="d-flex justify-content-center flex-wrap gap-3">
-        <span><i class="bi bi-envelope me-1 text-danger"></i> tlansantad@gmail.com</span>
-        <span><i class="bi bi-github me-1 text-dark"></i> <a href="https://github.com/Teeraphat2104" target="_blank">Teeraphat2104</a></span>
-        <span><i class="bi bi-globe me-1 text-danger"></i> <a href="https://teeraphat2104.github.io" target="_blank">teeraphat2104.github.io</a></span>
-      </div>
-    </div>
+    <script>
+        const sections = document.querySelectorAll('section');
+        const container = document.getElementById('container');
 
-    <!-- Summary -->
-    <section class="mb-4">
-      <h4 class="section-title"><i class="bi bi-file-earmark-text me-2"></i>Summary</h4>
-      <p>นักพัฒนาเว็บที่มีประสบการณ์การทำงานกับ Laravel และ HTML/CSS สามารถออกแบบเว็บไซต์ที่ตอบสนองต่อผู้ใช้งานได้อย่างดี</p>
-      <p>ปัจจุบันศึกษาอยู่ที่ มหาวิทยาลัยราชภัฏชัยภูมิ คณะศิลปศาสตร์และวิทยาศาสตร์ สาขาวิทยาการคอมพิวเตอร์ ชั้นปีที่ 4 (2568)</p>
-    </section>
+        function checkActiveSection() {
+            sections.forEach(sec => sec.classList.remove('active'));
+            
+            let closest = null;
+            let minDist = Infinity;
 
-    <!-- Skills -->
-    <section class="mb-4">
-      <h4 class="section-title"><i class="bi bi-lightning-charge me-2"></i>Skills</h4>
-      <div>
-        <span class="badge skill-badge">HTML</span>
-        <span class="badge skill-badge">CSS</span>
-        <span class="badge skill-badge">JavaScript</span>
-        <span class="badge skill-badge">Laravel</span>
-        <span class="badge skill-badge">MySQL</span>
-        <span class="badge skill-badge">Git</span>
-      </div>
-    </section>
+            sections.forEach(sec => {
+                const rect = sec.getBoundingClientRect();
+                const dist = Math.abs(rect.top);
+                if (dist < minDist) {
+                    minDist = dist;
+                    closest = sec;
+                }
+            });
 
-    <!-- Education -->
-    <section>
-      <h4 class="section-title"><i class="bi bi-mortarboard me-2"></i>Education</h4>
-      <div class="card border-0 shadow-sm mb-2">
-        <div class="card-body">
-          <h5 class="card-title mb-1 text-danger">Bachelor of Science in Computer Science</h5>
-          <p class="card-text text-muted mb-0">Chaiyaphum Rajabhat University (2021 - 2025)</p>
-        </div>
-      </div>
-    </section>
+            if (closest) closest.classList.add('active');
+        }
 
-    <!-- Project -->
-    <section>
-      <h4 class="section-title"><i class="bi bi-code-slash me-2"></i>My Project</h4>
-      <div class="card border-0 shadow-sm mb-2">
-        <div class="card-body">
-          <a href="http://202.29.51.239/" target="_blank" class="card-title mb-1 fw-semibold">
-            ระบบรายงานตัวบัณฑิต
-          </a>
-          <p class="card-text text-muted mb-0 mt-1">
-            เว็บแอปพลิเคชันพัฒนาด้วย Laravel สำหรับการจัดการข้อมูลบัณฑิตรายงานตัวก่อนพิธีรับปริญญา
-          </p>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+        container.addEventListener('scroll', checkActiveSection);
+        window.addEventListener('load', checkActiveSection);
+        window.addEventListener('resize', checkActiveSection);
+    </script>
 </body>
 </html>
