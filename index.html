@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>หน้าหลัก - เว็บไซต์</title>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <title>Teeraphat Lansantad - Full Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <style>
         * {
             margin: 0;
@@ -14,178 +16,860 @@
         }
 
         body {
-            font-family: 'Kanit', sans-serif;
-            background: linear-gradient(135deg, #ffeef8, #ffccdd, #ffeef8);
+            font-family: 'Sarabun', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #334155;
+            background: #e8edf4;
+        }
+
+        .page-wrapper {
             min-height: 100vh;
             display: flex;
+            align-items: flex-start;
             justify-content: center;
-            align-items: center;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
         .container {
-            max-width: 800px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(255, 182, 193, 0.3);
-            padding: 50px 40px;
-            text-align: center;
-        }
-
-        h1 {
-            color: #ff66b2;
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            text-shadow: 0 4px 10px rgba(255, 102, 178, 0.2);
-        }
-
-        .subtitle {
-            color: #888;
-            font-size: 18px;
-            margin-bottom: 50px;
-            font-weight: 300;
-        }
-
-        .links-grid {
+            max-width: 960px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
+            grid-template-columns: 265px 1fr;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(100, 116, 139, 0.12);
         }
 
-        .link-card {
-            background: linear-gradient(135deg, #fff0f5, #ffe6f0);
-            border: 2px solid #ffccdd;
-            border-radius: 15px;
-            padding: 30px 25px;
-            text-decoration: none;
-            color: #333;
-            transition: all 0.3s ease;
+        /* ── Sidebar ── */
+        .sidebar {
+            background: #f0f5fb;
+            border-right: 1px solid #dde5f0;
+            color: #1e293b;
+            padding: 48px 32px;
             display: flex;
             flex-direction: column;
+            gap: 0;
+        }
+
+        /* Avatar */
+        .avatar {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #60a5fa);
+            display: flex;
             align-items: center;
-            gap: 15px;
-            box-shadow: 0 4px 15px rgba(255, 182, 193, 0.2);
+            justify-content: center;
+            font-size: 1.8em;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 18px;
+            letter-spacing: -1px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
         }
 
-        .link-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 25px rgba(255, 102, 178, 0.4);
-            border-color: #ff66b2;
-            background: linear-gradient(135deg, #ffe6f0, #ffccdd);
+        .profile-name {
+            font-size: 1.35em;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 4px;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
         }
 
-        .link-icon {
-            font-size: 48px;
-            color: #ff66b2;
-            margin-bottom: 5px;
-        }
-
-        .link-title {
-            font-size: 24px;
+        .profile-title {
+            font-size: 0.78em;
+            color: #3b82f6;
             font-weight: 600;
-            color: #ff3399;
-            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 2px;
         }
 
-        .link-description {
-            font-size: 14px;
-            color: #666;
-            margin: 0;
-            font-weight: 300;
+        .profile-subtitle {
+            font-size: 0.78em;
+            color: #64748b;
+            font-weight: 400;
+            margin-bottom: 32px;
         }
 
-        .decorative-elements {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
+        .divider {
+            height: 1px;
+            background: #dde5f0;
+            margin: 24px 0;
+        }
+
+        .sidebar-section {
+            margin-bottom: 28px;
+        }
+
+        .sidebar-title {
+            font-size: 0.68em;
+            text-transform: uppercase;
+            color: #3b82f6;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        /* Contact items with icons */
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .contact-icon {
+            width: 16px;
+            height: 16px;
+            margin-top: 2px;
+            flex-shrink: 0;
+            opacity: 0.45;
+            color: #475569;
+        }
+
+        .contact-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-label {
+            font-size: 0.65em;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        .contact-value {
+            font-size: 0.82em;
+            color: #334155;
+            word-break: break-all;
+            margin-top: 1px;
+            text-decoration: none;
+        }
+
+        a.contact-value:hover {
+            color: #3b82f6;
+        }
+
+        /* Tech tags */
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tech-tag {
+            background: #ffffff;
+            color: #475569;
+            padding: 4px 9px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            font-weight: 500;
+            border: 1px solid #dde5f0;
+            transition: border-color 0.2s, background 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .tech-tag:hover {
+            background: #e8f0fe;
+            border-color: #93c5fd;
+            color: #1d4ed8;
+        }
+
+        .tech-tag i {
+            font-size: 1.15em;
+            line-height: 1;
+        }
+
+        /* Languages */
+        .lang-item {
+            margin-bottom: 10px;
+        }
+
+        .lang-name {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.82em;
+            color: #334155;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .lang-level {
+            font-size: 0.7em;
+            color: #94a3b8;
+        }
+
+        .lang-bar {
+            height: 3px;
+            background: #dde5f0;
+            border-radius: 2px;
             overflow: hidden;
         }
 
-        .floating-icon {
+        .lang-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6, #93c5fd);
+            border-radius: 2px;
+        }
+
+        /* ── Main Content ── */
+        .main-content {
+            padding: 48px 44px;
+            background: #ffffff;
+        }
+
+        .section {
+            margin-bottom: 38px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1.5px solid #e8edf4;
+        }
+
+        .section-icon {
+            width: 3px;
+            height: 20px;
+            background: linear-gradient(180deg, #3b82f6, #93c5fd);
+            border-radius: 2px;
+        }
+
+        .section-title {
+            font-size: 0.8em;
+            font-weight: 800;
+            color: #0f172a;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* About */
+        .about-text {
+            color: #475569;
+            font-size: 0.92em;
+            line-height: 1.85;
+        }
+
+        /* Experience */
+        .job-entry {
+            margin-bottom: 28px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #f1f5f9;
+            position: relative;
+        }
+
+        .job-entry:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 6px;
+            gap: 12px;
+        }
+
+        .job-title {
+            font-size: 1em;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .job-company {
+            font-size: 0.88em;
+            color: #3b82f6;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .job-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+            flex-shrink: 0;
+        }
+
+        .job-date {
+            font-size: 0.78em;
+            color: #64748b;
+            white-space: nowrap;
+            font-weight: 500;
+            background: #f0f5fb;
+            padding: 3px 8px;
+            border-radius: 4px;
+            border: 1px solid #dde5f0;
+        }
+
+        .job-type {
+            font-size: 0.7em;
+            color: #3b82f6;
+            font-weight: 600;
+            background: #ebf3ff;
+            padding: 2px 7px;
+            border-radius: 4px;
+            border: 1px solid #bfdbfe;
+        }
+
+        .job-project {
+            font-size: 0.85em;
+            font-weight: 700;
+            color: #334155;
+            margin-bottom: 6px;
+            margin-top: 10px;
+        }
+
+        .job-bullets {
+            margin-top: 8px;
+            padding-left: 0;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .job-bullets li {
+            font-size: 0.88em;
+            color: #475569;
+            line-height: 1.6;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .job-bullets li::before {
+            content: '→';
             position: absolute;
-            font-size: 40px;
-            opacity: 0.15;
-            animation: float 20s infinite ease-in-out;
+            left: 0;
+            color: #3b82f6;
+            font-size: 0.9em;
         }
 
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-30px) rotate(10deg);
-            }
+        /* Education */
+        .education-entry {
+            margin-bottom: 18px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #e8edf4;
         }
 
-        @media (max-width: 768px) {
+        .education-entry:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .school-name {
+            font-size: 0.95em;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .degree {
+            color: #475569;
+            font-size: 0.88em;
+            margin-top: 3px;
+        }
+
+        .grad-year {
+            font-size: 0.78em;
+            color: #64748b;
+            font-weight: 500;
+            background: #f0f5fb;
+            padding: 3px 8px;
+            border-radius: 4px;
+            border: 1px solid #dde5f0;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        /* Skills */
+        .skills-table {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .skill-row {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 10px;
+            align-items: flex-start;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e8edf4;
+        }
+
+        .skill-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .skill-cat-label {
+            font-size: 0.68em;
+            font-weight: 800;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-top: 6px;
+            line-height: 1.3;
+        }
+
+        .skill-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .skill-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #f5f8fd;
+            border: 1px solid #dde5f0;
+            border-radius: 6px;
+            padding: 5px 11px;
+            font-size: 0.8em;
+            font-weight: 500;
+            color: #334155;
+            transition: border-color 0.15s, background 0.15s;
+        }
+
+        .skill-chip:hover {
+            background: #ebf3ff;
+            border-color: #93c5fd;
+            color: #1d4ed8;
+        }
+
+        .skill-chip i {
+            font-size: 1.25em;
+            line-height: 1;
+        }
+
+        .skill-chip svg {
+            flex-shrink: 0;
+        }
+
+        /* Project link */
+        .project-link {
+            font-size: 0.78em;
+            color: #3b82f6;
+            font-weight: 600;
+            text-decoration: none;
+            background: rgba(59, 130, 246, 0.08);
+            padding: 3px 10px;
+            border-radius: 4px;
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+
+        .project-link:hover {
+            background: rgba(59, 130, 246, 0.18);
+        }
+
+        /* Print button */
+        .print-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 0.85em;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(59, 130, 246, 0.35);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: transform 0.15s, box-shadow 0.15s;
+            font-family: inherit;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.45);
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .page-wrapper {
+                padding: 0;
+            }
+
             .container {
-                padding: 30px 25px;
+                border-radius: 0;
+                box-shadow: none;
+                max-width: 100%;
             }
 
-            h1 {
-                font-size: 36px;
+            .print-btn {
+                display: none;
             }
 
-            .subtitle {
-                font-size: 16px;
+            .section {
+                page-break-inside: avoid;
             }
 
-            .links-grid {
+            .job-entry {
+                page-break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 860px) {
+            .container {
                 grid-template-columns: 1fr;
-                gap: 20px;
             }
 
-            .link-card {
-                padding: 25px 20px;
+            .sidebar {
+                padding: 36px 32px;
             }
 
-            .link-icon {
-                font-size: 40px;
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 560px) {
+            .page-wrapper {
+                padding: 0;
             }
 
-            .link-title {
-                font-size: 20px;
+            .container {
+                border-radius: 0;
+            }
+
+            .sidebar, .main-content {
+                padding: 28px 24px;
+            }
+
+            .job-header, .edu-header {
+                flex-direction: column;
+            }
+
+            .job-badge {
+                align-items: flex-start;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <div class="decorative-elements">
-        <div class="floating-icon" style="top: 10%; left: 10%; animation-delay: 0s;">✨</div>
-        <div class="floating-icon" style="top: 20%; right: 15%; animation-delay: 3s;">🌟</div>
-        <div class="floating-icon" style="bottom: 15%; left: 12%; animation-delay: 6s;">💫</div>
-        <div class="floating-icon" style="bottom: 25%; right: 10%; animation-delay: 9s;">🎈</div>
-    </div>
+    <div class="page-wrapper">
+        <div class="container">
+            <!-- ── Sidebar ── -->
+            <div class="sidebar">
+                <div class="avatar">TL</div>
+                <div class="profile-name">Teeraphat Lansantad</div>
+                <div class="profile-title">Full Stack Developer</div>
+                <div class="profile-subtitle">Web Application Specialist</div>
 
-    <div class="container">
-        <h1><i class="bi bi-house-heart"></i> หน้าหลัก</h1>
-        <p class="subtitle">เลือกหน้าเว็บไซต์ที่ต้องการเข้าไปดู</p>
+                <div class="divider"></div>
 
-        <div class="links-grid">
-            <a href="newyear.html" class="link-card">
-                <i class="bi bi-calendar-heart link-icon"></i>
-                <h2 class="link-title">Happy New Year</h2>
-                <p class="link-description">หน้าแสดงข้อความอวยพรปีใหม่ 2026</p>
-            </a>
+                <!-- Contact -->
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Contact</div>
 
-            <a href="resume.html" class="link-card">
-                <i class="bi bi-file-person link-icon"></i>
-                <h2 class="link-title">Resume</h2>
-                <p class="link-description">ประวัติส่วนตัวและผลงาน</p>
-            </a>
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <div class="contact-text">
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">tlansantad@gmail.com</span>
+                        </div>
+                    </div>
 
-            <a href="birthday.html" class="link-card">
-                <i class="bi bi-cake-fill link-icon"></i>
-                <h2 class="link-title">Birthday</h2>
-                <p class="link-description">วันเกิดดดดดด</p>
-            </a>
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.06 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path>
+                        </svg>
+                        <div class="contact-text">
+                            <span class="contact-label">Phone</span>
+                            <span class="contact-value">064 547 2739</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"></path>
+                        </svg>
+                        <div class="contact-text">
+                            <span class="contact-label">GitHub</span>
+                            <a href="https://github.com/Teeraphat2104" target="_blank" class="contact-value">Teeraphat2104</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <div class="contact-text">
+                            <span class="contact-label">Location</span>
+                            <span class="contact-value">Thailand</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Tech Stack -->
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Tech Stack</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag"><i class="devicon-laravel-plain"></i>Laravel</span>
+                        <span class="tech-tag"><i class="devicon-php-plain"></i>PHP</span>
+                        <span class="tech-tag"><i class="devicon-react-original"></i>React</span>
+                        <span class="tech-tag"><i class="devicon-javascript-plain"></i>JavaScript</span>
+                        <span class="tech-tag"><i class="devicon-mysql-plain"></i>MySQL</span>
+                        <span class="tech-tag">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0">
+                                <path d="M8 9l3 3-3 3M13 15h3"/>
+                                <rect x="2" y="3" width="20" height="18" rx="2"/>
+                            </svg>RESTful API</span>
+                        <span class="tech-tag"><i class="devicon-laravel-plain"></i>Blade</span>
+                        <span class="tech-tag"><i class="devicon-html5-plain"></i>HTML5</span>
+                        <span class="tech-tag"><i class="devicon-css3-plain"></i>CSS3</span>
+                        <span class="tech-tag"><i class="devicon-jquery-plain"></i>jQuery</span>
+                        <span class="tech-tag">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0">
+                                <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/>
+                                <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/>
+                            </svg>AJAX</span>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Tools & Platforms</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag"><i class="devicon-git-plain"></i>Git</span>
+                        <span class="tech-tag"><i class="devicon-github-original"></i>GitHub</span>
+                        <span class="tech-tag"><i class="devicon-vscode-plain"></i>VS Code</span>
+                        <span class="tech-tag">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0">
+                                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+                            </svg>Lark</span>
+                        <span class="tech-tag">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0">
+                                <circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/>
+                                <path d="M13 6h3a2 2 0 012 2v7M6 9v12"/>
+                            </svg>Fork</span>
+                        <span class="tech-tag"><i class="devicon-postman-plain"></i>Postman</span>
+                    </div>
+                </div>
+                <div class="divider"></div>
+            </div>
+
+            <!-- ── Main Content ── -->
+            <div class="main-content">
+
+                <!-- About -->
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-icon"></div>
+                        <div class="section-title">Profile</div>
+                    </div>
+                    <p class="about-text">
+                        Full Stack Developer with hands-on experience designing and shipping production web applications.
+                        Strong backend foundation in <strong>Laravel</strong> and <strong>RESTful API</strong> design, paired with
+                        frontend skills in <strong>React</strong> and <strong>Blade</strong>. Comfortable owning the full
+                        development cycle — from database schema through deployment — with a focus on clean, maintainable code
+                        and reliable user experiences.
+                    </p>
+                </div>
+
+                <!-- Experience -->
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-icon"></div>
+                        <div class="section-title">Experience</div>
+                    </div>
+
+                    <div class="job-entry">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Full Stack Developer</div>
+                                <div class="job-company">AIRPORTELs · Bangkok, Thailand</div>
+                            </div>
+                            <div class="job-badge">
+                                <span class="job-date">Nov 2025 – Mar 2026</span>
+                                <span class="job-type">Intern</span>
+                            </div>
+                        </div>
+                        <div class="job-project">Luggage Storage Management System</div>
+                        <ul class="job-bullets">
+                            <li>Designed and implemented RESTful APIs for luggage check-in, storage tracking, and retrieval workflows used in live airport operations.</li>
+                            <li>Architected the relational database schema (MySQL) to handle storage slots, booking records, and customer data with integrity constraints.</li>
+                            <li>Built interactive frontend views using React and Laravel Blade, integrating AJAX/jQuery for real-time status updates without page reloads.</li>
+                            <li>Handled end-to-end request/response cycles, input validation, and error handling across the full stack.</li>
+                            <li>Collaborated with team members via Git and Lark, participating in code reviews and iterative feature delivery.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Projects -->
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-icon"></div>
+                        <div class="section-title">Projects</div>
+                    </div>
+
+                    <div class="job-entry">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Graduate Reporting System</div>
+                                <div class="job-company">Chaiyaphum Rajabhat University</div>
+                            </div>
+                            <div class="job-badge">
+                                <a href="http://202.29.51.239/" target="_blank" class="project-link">View Live →</a>
+                            </div>
+                        </div>
+                        <div class="job-project">ระบบรายงานตัวบัณฑิต มหาวิทยาลัยราชภัฏชัยภูมิ</div>
+                        <ul class="job-bullets">
+                            <li>Developed a web-based graduate registration and reporting system for university graduation ceremonies.</li>
+                            <li>Enabled graduates to register, confirm attendance, and submit required information online, reducing manual paperwork.</li>
+                            <li>Built with Laravel backend, MySQL database, and Blade templating for a responsive, multi-step registration flow.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-icon"></div>
+                        <div class="section-title">Education</div>
+                    </div>
+
+                    <div class="education-entry">
+                        <div class="edu-header">
+                            <div>
+                                <div class="school-name">Chaiyaphum Rajabhat University</div>
+                                <div class="degree">Bachelor of Science — Computer Science</div>
+                            </div>
+                            <span class="grad-year">2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-icon"></div>
+                        <div class="section-title">Skills</div>
+                    </div>
+
+                    <div class="skills-table">
+
+                        <div class="skill-row">
+                            <span class="skill-cat-label">Backend</span>
+                            <div class="skill-chips">
+                                <span class="skill-chip"><i class="devicon-laravel-plain" style="color:#f9322c"></i>Laravel</span>
+                                <span class="skill-chip"><i class="devicon-php-plain" style="color:#777bb3"></i>PHP</span>
+                                <span class="skill-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5"><path d="M8 9l3 3-3 3M13 15h3"/><rect x="2" y="3" width="20" height="18" rx="2"/></svg>RESTful API</span>
+                                <span class="skill-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Middleware</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-row">
+                            <span class="skill-cat-label">Frontend</span>
+                            <div class="skill-chips">
+                                <span class="skill-chip"><i class="devicon-react-original" style="color:#61dafb"></i>React</span>
+                                <span class="skill-chip"><i class="devicon-javascript-plain" style="color:#d4a017"></i>JavaScript</span>
+                                <span class="skill-chip"><i class="devicon-laravel-plain" style="color:#f9322c"></i>Blade</span>
+                                <span class="skill-chip"><i class="devicon-jquery-plain" style="color:#0769ad"></i>jQuery</span>
+                                <span class="skill-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>AJAX</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-row">
+                            <span class="skill-cat-label">Database</span>
+                            <div class="skill-chips">
+                                <span class="skill-chip"><i class="devicon-mysql-plain" style="color:#00758f"></i>MySQL</span>
+                                <span class="skill-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>Schema Design</span>
+                                <span class="skill-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Query Opt.</span>
+                                <span class="skill-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>Migrations</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-row">
+                            <span class="skill-cat-label">Markup & Style</span>
+                            <div class="skill-chips">
+                                <span class="skill-chip"><i class="devicon-html5-plain" style="color:#e34f26"></i>HTML5</span>
+                                <span class="skill-chip"><i class="devicon-css3-plain" style="color:#1572b6"></i>CSS3</span>
+                                <span class="skill-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Responsive</span>
+                                <span class="skill-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Flexbox / Grid</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-row">
+                            <span class="skill-cat-label">Dev Tools</span>
+                            <div class="skill-chips">
+                                <span class="skill-chip"><i class="devicon-git-plain" style="color:#f05032"></i>Git</span>
+                                <span class="skill-chip"><i class="devicon-github-original" style="color:#24292e"></i>GitHub</span>
+                                <span class="skill-chip"><i class="devicon-vscode-plain" style="color:#007acc"></i>VS Code</span>
+                                <span class="skill-chip"><i class="devicon-postman-plain" style="color:#ff6c37"></i>Postman</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-row">
+                            <span class="skill-cat-label">Soft Skills</span>
+                            <div class="skill-chips">
+                                <span class="skill-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>Teamwork</span>
+                                <span class="skill-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"/></svg>Problem Solving</span>
+                                <span class="skill-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>Self-learning</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
